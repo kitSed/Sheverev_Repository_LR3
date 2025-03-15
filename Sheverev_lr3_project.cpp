@@ -4,6 +4,25 @@
 #include <algorithm>
 #include <ctime>
 
+using namespace std;
+
+const int INT_MINN = numeric_limits<int>::min();
+const int INT_MAXX = numeric_limits<int>::max();
+
+int pr_int(string str, int minx, int maxx)
+{
+    int x = 0;
+    cout << str;
+    while (!(cin >> x) || (cin.peek() != '\n') || x <= minx || x >= maxx)
+    {
+            
+        cin.clear();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        cout << str;
+    }
+    return x;
+}
+
 int A;
 int B;
 int C;
@@ -13,17 +32,17 @@ int X2;
 
 void coofitient_a_of_the_quadratic_equation()
 {
-
+    A = pr_int("\nEnter the number.\n",INT_MINN, INT_MAXX);
 }
 
 void coofitient_b_of_the_quadratic_equation()
 {
-
+    B = pr_int("\nEnter the number.\n",INT_MINN, INT_MAXX);
 }
 
 void coofitient_c_of_the_quadratic_equation()
 {
-
+    C = pr_int("\nEnter the number.\n",INT_MINN, INT_MAXX);
 }
 
 void calculation_of_discriminant()
